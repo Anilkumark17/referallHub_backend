@@ -19,8 +19,8 @@ const login = async (req, res) => {
     console.log("Supabase user data:", data.user);
 
     const { data: profileData, error: profileError } = await db
-      .from("user_profiles")
-      .select("role")
+      .from("profiles")
+      .select("*")
       .eq("id", data.user.id)
       .single();
 
